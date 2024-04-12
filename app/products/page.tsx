@@ -2,6 +2,7 @@
 import { useTheme } from "@/context/ThemeContext"
 import "./page.scss"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 interface Product {
     _id:string,
     name:string,
@@ -47,7 +48,7 @@ return (
         <div className="conten">
         {product && product?.map((item)=>(
             <div key={item._id} className={`car ${isDarkMode ? "dark" : "light"}`}>
-<img src={item.picture} alt={item.name} className="image" />
+<Image src={item.picture} alt={item.name} className="image" />
 <h2 className="name">{item.name}</h2>
 <h3 className="gender">Gender : {item.gender==="male" ? "Male" : "Female"}</h3>
 <h4 className="category">Category : {item.category==="makeup" ? "Make Up" : item.category==="skincare" ? "Skin Care" : "Hair Care"}</h4>
